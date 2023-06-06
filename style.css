@@ -1,0 +1,65 @@
+/* animation when page loads */
+@keyframes slideOnLoad {
+    0% {
+        transform: translateY(150%);
+        overflow: hidden;
+    }
+    100% {
+        transform: translateY(0);
+        overflow: hidden;
+    }
+}
+
+body {
+    background-color: black;
+    display: flex;
+}
+
+.main {
+    animation: slideOnLoad 1s ease-out 0s 1 normal forwards running;
+    margin-left: 20%;
+    margin-top: 10%;
+    font-family: monospace;
+
+}
+
+
+#title {
+    font-size: 120px;
+    background: linear-gradient(45deg, #F53844, #42378F);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: min-content;
+    height: min-content;
+}
+
+/* typing animation of content */
+@keyframes typing {
+    from {
+      width: 0
+    }
+}
+      
+@keyframes blink {
+    50% {
+      border-color: transparent
+    }
+}
+
+#description {
+    display: grid;
+    place-items: center;
+}
+
+#description {
+    width: 21ch;
+    animation: typing 1s steps(20), blink .5s step-end infinite alternate;
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-size: 2em;
+    color: white;
+}
