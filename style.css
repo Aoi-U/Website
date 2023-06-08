@@ -22,7 +22,7 @@ body {
 body .container .section-snap {
     height: 100vh;
     scroll-snap-align: start;
-  }
+}
 
 body .container {
     height: 100vh;
@@ -93,21 +93,23 @@ body .container {
 .hidden {
     opacity: 0;
     transform: translateX(-100%);
-    transition: cubic-bezier(.03,.3,0,1) all 1.3s;
+    transition: cubic-bezier(.03,.3,0,1) all 0s;
 }
 
 .show {
     opacity: 1;
     transform: translateX(0);
+    transition: cubic-bezier(.03,.3,0,1) all 1.3s;
+
 }
 
 .page-two-content {
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .page-two-title {
-    font-size: 6em;
-    margin: auto;
+    font-size: 8em;
+    padding-top: 25px;
     text-align: center;
 }
 
@@ -125,17 +127,18 @@ body .container {
     margin-bottom: 50px;
 }
 
-.page-two-description:nth-child(0) { transition-delay: 200ms; }
-.page-two-description:nth-child(1) { transition-delay: 300ms; }
-.page-two-description:nth-child(2) { transition-delay: 400ms; }
-.page-two-description:nth-child(3) { transition-delay: 500ms; }
-.page-two-description:nth-child(4) { transition-delay: 600ms; }
-.page-two-description:nth-child(5) { transition-delay: 700ms; }
-.page-two-description:nth-child(6) { transition-delay: 800ms; }
-.page-two-description:nth-child(7) { transition-delay: 900ms; }
-.page-two-description:nth-child(8) { transition-delay: 1000ms; }
-.page-two-description:nth-child(9) { transition-delay: 1300ms; }
+.show.page-two-description:nth-child(0) { transition-delay: 200ms; }
+.show.page-two-description:nth-child(1) { transition-delay: 300ms; }
+.show.page-two-description:nth-child(2) { transition-delay: 400ms; }
+.show.page-two-description:nth-child(3) { transition-delay: 500ms; }
+.show.page-two-description:nth-child(4) { transition-delay: 600ms; }
+.show.page-two-description:nth-child(5) { transition-delay: 700ms; }
+.show.page-two-description:nth-child(6) { transition-delay: 800ms; }
+.show.page-two-description:nth-child(7) { transition-delay: 900ms; }
+.show.page-two-description:nth-child(8) { transition-delay: 1000ms; }
+.show.page-two-description:nth-child(9) { transition-delay: 1300ms; }
 
 .page-three-title {
     font-size: 5em;
 }
+
