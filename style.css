@@ -5,11 +5,6 @@
         opacity: 0;
         overflow: hidden;
     }
-    75% {
-        transform: translateY(-7%);
-        opacity: 60%;
-        overflow: hidden;
-    }
     100% {
         transform: translateY(0%);
         opacity: 100%;
@@ -20,28 +15,44 @@
 body {
     background-color: black;
     color: white;
+    font-family: monospace;
+    margin: 0;
 }
 
-.main {
+body .container .section-snap {
+    height: 100vh;
+    scroll-snap-align: start;
+  }
+
+body .container {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-snap-type: mandatory;
+    overflow: auto;
+}
+
+.title-page {
     animation-name: slideOnLoad;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(.17,.73,.14,1.0);
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(.03,.3,0,1);
     animation-delay: 1s;
     animation-fill-mode: backwards;
-    margin-left: 20%;
-    margin-top: 10%;
-    font-family: monospace;
-    width: fit-content;
+    overflow: hidden;
+    height: 100vh;
+    display: grid;
+    align-content: center;
 }
 
-#title {
-    font-size: 13em;
+.title {
     background: linear-gradient(45deg, #F53844, #42378F);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: min-content;
-    height: min-content;
+}
+
+.main-title {
+    font-size: 13em;
+    margin-left: 10%;
 }
 
 /* typing animation of content */
@@ -57,17 +68,74 @@ body {
     }
 }
 
-#main-description {
-    width: 21ch;
-    animation: typing 1s steps(20), blink .5s step-end infinite alternate;
-    animation-delay: 2.5s;
+.main-description {
+    font-size: 2em;
+    width: 22ch;
+    animation: typing 1.3s steps(22), blink .5s step-end infinite alternate;
+    animation-delay: 2.7s;
     animation-fill-mode: backwards;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
-    font-size: 2em;
+    margin-top: -10%;
+    margin-left: 10%;
 }
 
-#sub-description {
+.sub-description {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: cubic-bezier(.03,.3,0,1) all 1.3s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.page-two-content {
+    min-height: 100vh;
+}
+
+.page-two-title {
+    font-size: 6em;
+    margin: auto;
+    text-align: center;
+}
+
+.page-two-description {
+    margin-left: 10%;
+}
+
+.page-two-content h2 {
+    font-size: 4em;
+    margin-top: 40px;
+}
+
+.page-two-content li {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.page-two-description:nth-child(0) { transition-delay: 200ms; }
+.page-two-description:nth-child(1) { transition-delay: 300ms; }
+.page-two-description:nth-child(2) { transition-delay: 400ms; }
+.page-two-description:nth-child(3) { transition-delay: 500ms; }
+.page-two-description:nth-child(4) { transition-delay: 600ms; }
+.page-two-description:nth-child(5) { transition-delay: 700ms; }
+.page-two-description:nth-child(6) { transition-delay: 800ms; }
+.page-two-description:nth-child(7) { transition-delay: 900ms; }
+.page-two-description:nth-child(8) { transition-delay: 1000ms; }
+.page-two-description:nth-child(9) { transition-delay: 1300ms; }
+
+.page-three-title {
+    font-size: 5em;
 }
