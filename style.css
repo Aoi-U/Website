@@ -184,11 +184,10 @@ body .container {
     animation-fill-mode: backwards;
     overflow: hidden;
     height: 100vh;
-    display: grid;
-    align-content: center;
+    display: flex;
 }
 
-.title {
+.titles {
     background: linear-gradient(45deg, #F53844, #42378F);
     background-clip: text;
     -webkit-background-clip: text;
@@ -197,7 +196,8 @@ body .container {
 
 .main-title {
     font-size: 15em;
-    margin-left: 40%;
+    width: fit-content;
+    flex: 100%;
 }
 
 /* typing animation of content */
@@ -222,26 +222,27 @@ body .container {
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
-    margin-top: -10%;
-    margin-left: 40%;
+    flex: 50%;
 }
 
 .sub-description {
-    grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column-start: 2;
-    grid-column-end: 2;
     white-space: nowrap;
     overflow: hidden;
+    width: fit-content;
+    flex: 100%;
 }
 
-.hidden {
+.page-two-description {
+    margin-left: 50px;
+}
+
+.page-two-description.hidden {
     opacity: 0;
     transform: translateX(-100%);
     transition: cubic-bezier(.03,.3,0,1) all 0s;
 }
 
-.show {
+.page-two-description.show {
     opacity: 1;
     transform: translateX(0);
     transition: cubic-bezier(.03,.3,0,1) all 1.3s;
@@ -254,12 +255,9 @@ body .container {
 
 .page-two-title {
     font-size: 8em;
-    padding-top: 60px;
     text-align: center;
-}
-
-.page-two-description {
-    margin-left: 10%;
+    padding-top: 70px;
+    margin-bottom: -15px;
 }
 
 .page-two-content h2 {
@@ -268,7 +266,7 @@ body .container {
 
 .page-two-content li {
     font-size: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 .show.page-two-description:nth-child(0) { transition-delay: 200ms; }
