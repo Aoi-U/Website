@@ -36,6 +36,6 @@ menu.addEventListener("click", function() {
     }
     shown = !shown;
 
-    let navBar = document.getElementsByClassName("navigation-content")[0];
-    navBar.classList.toggle("navigation-content-show");
+    let navBar = document.getElementsByClassName("navigation-container")[0];
+    navBar.classList.toggle("navigation-container-show");
 });
