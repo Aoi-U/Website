@@ -1,15 +1,15 @@
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+const observer = new IntersectionObserver(els => {
+    els.forEach(el => {
+        if (el.isIntersecting) {
+            el.target.classList.add('show');
         } else {
-            entry.target.classList.remove('show');
+            el.target.classList.remove('show');
         }
     });
 });
 
 const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach(element => observer.observe(element));
+hiddenElements.forEach(el => observer.observe(el));
 
 const menu = document.getElementsByClassName("menu-container")[0];
 let shown = true;
@@ -39,3 +39,4 @@ menu.addEventListener("click", function() {
     let navBar = document.getElementsByClassName("navigation-container")[0];
     navBar.classList.toggle("navigation-container-show");
 });
+
